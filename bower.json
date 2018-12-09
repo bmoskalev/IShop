@@ -1,0 +1,17 @@
+{
+  "name": "shop",
+  "homepage": "https://github.com/bmoskalev/IShop",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "^1.12.1"
+  }
+}
