@@ -1,0 +1,11 @@
+{
+  "countFeedbacks" : 4,
+  "lastIndex" : 4,
+  "feedbacks" :
+  [
+  {"id": 1, "author": "Ann", "text": "some text", "isApproved": true},
+  {"id": 2, "author": "Ann", "text": "some text", "isApproved": true},
+  {"id": 3, "author": "Ann", "text": "some text", "isApproved": true},
+  {"id": 4, "author": "Ann", "text": "some text", "isApproved": true}
+  ]
+}
