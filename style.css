@@ -1630,6 +1630,11 @@
         padding: 20px;
         box-sizing: border-box;
     }
+    .feedback-item {
+        border-top: 1px solid #eaeaea;
+        margin-bottom: 10px;
+    }
+
     .feedbackForm {
         color: #222222;
         width: 100%;
@@ -1669,4 +1674,7 @@
         box-sizing: border-box;
         display: block;
         border: 1px solid #eaeaea;
+    }
+    .apprBtn {
+        margin-right: 10px;
     }

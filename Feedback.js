@@ -33,6 +33,8 @@ class Feedback {
             class: 'feedback-item',
             'data-feedback': feedback.id,
         });
+        $container.append($(`<p class="feedback-author">${feedback.author}</p>`));
+        $container.append($(`<p class="feedback-text">${feedback.text}</p>`));
         if (feedback.isApproved) {
             $container.addClass("approved");
         } else {
@@ -45,8 +47,6 @@ class Feedback {
             $container.append($apprBtn);
 
         }
-        $container.append($(`<p class="feedback-author">${feedback.author}</p>`));
-        $container.append($(`<p class="feedback-text">${feedback.text}</p>`));
         let $remBtn = $('<button/>', {
             class: 'button-site my-acc remBtn',
             text: 'Remove feedback'
@@ -84,5 +84,6 @@ class Feedback {
         let find = this.feedbackItems.find(feedback => feedback.id === feedbackId);
         find.isApproved = true;
         $(`div[data-feedback="${feedbackId}"]`).addClass("approved");
+        $('.apprBtn').remove();
     }
 }
