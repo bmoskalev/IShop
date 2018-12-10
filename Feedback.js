@@ -37,7 +37,7 @@ class Feedback {
             $container.addClass("approved");
         } else {
             let $apprBtn = $('<button/>', {
-                class: 'apprBtn',
+                class: 'button-site my-acc apprBtn',
                 text: 'Approve feedback'
             }).click(() => {
                 this._approve(feedback.id);
@@ -48,7 +48,7 @@ class Feedback {
         $container.append($(`<p class="feedback-author">${feedback.author}</p>`));
         $container.append($(`<p class="feedback-text">${feedback.text}</p>`));
         let $remBtn = $('<button/>', {
-            class: 'remBtn',
+            class: 'button-site my-acc remBtn',
             text: 'Remove feedback'
         }).click(() => {
             this._remove(feedback.id);
