@@ -55,7 +55,6 @@
     .header-form {
         display: flex;
         position: relative;
-
     }
     
     .button-site {
@@ -156,7 +155,6 @@
         background: -ms-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
         background: linear-gradient(180deg, #f9f9f9 0%, #f5f5f5 100%);
         width: 87px;
-        height: 38px;
         color: #222222;
         font-size: 14px;
         font-weight: 300;
@@ -1445,7 +1443,8 @@
     .searchRef{
         border: #e8e8e8 1px solid;
         background-color: white;
-
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
     }
     .fa-search {
         padding: 12px;
