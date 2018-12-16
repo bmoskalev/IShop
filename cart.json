@@ -1,0 +1,22 @@
+{
+  "items": [
+  {
+    "id_product": 1,
+    "product_name": "Mango people t-shirt1",
+    "size": ["xxs", "xs", "s", "m", "l", "xl", "xxl"],
+    "imgSrc": "img/items/items-foto1.jpg",
+    "alt": "product foto",
+    "price": 52.00,
+    "quantity": 1
+  },
+  {
+    "id_product": 2,
+    "product_name": "Mango people t-shirt2",
+    "size": ["xxs", "xs", "s", "m", "l", "xl", "xxl"],
+    "imgSrc": "img/items/items-foto2.jpg",
+    "alt": "product foto",
+    "price": 52.00,
+    "quantity": 1
+  }  ],
+  "amount": 104.00
+}
