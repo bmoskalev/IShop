@@ -606,11 +606,10 @@
     $(document).ready(() => {
         new Products('.box-products', 'products.json', 0, 8);
         let cart = new Cart('.shopping-cart-quick-items', 'cart.json');
-        // $('.featured-items-products').on('click', '.add-to-cart', e => {
-        //     e.preventDefault();
-        //     console.log(e.target);
-        //     cart.addElement(e.target)
-        // });
+        $('.box-products').on('click', '.add', e => {
+            e.preventDefault();
+            cart.addElement(e.target)
+        });
     })
 </script>
 </body>

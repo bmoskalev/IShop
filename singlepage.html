@@ -646,12 +646,18 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script src="Products.js"></script>
+<script src="Cart.js"></script>
 <script src="Feedback.js"></script>
 <script>
     $(document).ready(() => {
-// Feedbacks
+ // Feedbacks
         new Feedback('feedback.json', '#feedbackContainer');
         new Products('.box-products', 'products.json', 17, 4);
+        let cart = new Cart('.shopping-cart-quick-items', 'cart.json');
+        $('.box-products').on('click', '.add', e => {
+            e.preventDefault();
+            cart.addElement(e.target)
+        });
 
     });
 </script>

@@ -47,7 +47,7 @@ class Products {
             'data-id': item.id_product,
             'data-name': item.product_name,
             'data-price': item.price,
-            'data-imgSrc': item.imgSrc,
+            'data-img-Src': item.imgSrc,
             'data-alt': item.alt
         });
         $cartLink.append($('<img class="cart-img" src="img/addcart.svg" alt="cart-img">'));

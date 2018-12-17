@@ -1137,7 +1137,7 @@ a {
     justify-content: space-between;
 }
 
-.button-cart {
+.button-clearCart {
     width: 235px;
     height: 50px;
     display: block;
@@ -1152,7 +1152,7 @@ a {
     text-decoration: none;
 }
 
-.button-cart:hover {
+.button-clearCart:hover {
     box-shadow: 0 0 10px #ccc;
 }
 
@@ -1565,6 +1565,11 @@ select[id="show"] {
     background-color: #ffffff;
 }
 
+.sh-proddet-img {
+    width: 100px;
+    height: 115px;
+}
+
 .sh-proddet-desc {
     margin-left: 21px;
 }
@@ -1847,6 +1852,7 @@ select[id="show"] {
     background-color: #c0c0c0;
     transition: scale 0.2s;
 }
+
 .shop-cart-abort a {
     display: block;
     width: 15px;
@@ -1857,6 +1863,7 @@ select[id="show"] {
     text-align: center;
     transition: scale 0.2s;
 }
+
 .shop-cart-abort a:hover {
     color: #f16d7f;
 }

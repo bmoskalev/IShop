@@ -713,15 +713,15 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
     <script src="Products.js"></script>
+    <script src="Cart.js"></script>
     <script>
         $(document).ready(() => {
             new Products('.box-products', 'products.json', 8, 9);
-            // let cart = new Cart('.shopping-cart-quick-items', 'cart.json');
-            // $('.featured-items-products').on('click', '.add-to-cart', e => {
-            //     e.preventDefault();
-            //     console.log(e.target);
-            //     cart.addElement(e.target)
-            // });
+            let cart = new Cart('.shopping-cart-quick-items', 'cart.json');
+            $('.box-products').on('click', '.add', e => {
+                e.preventDefault();
+                cart.addElement(e.target)
+            });
         })
     </script>
 </body>

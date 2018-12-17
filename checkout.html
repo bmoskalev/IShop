@@ -575,6 +575,14 @@
         </div>
     </div>
 </footer>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="Products.js"></script>
+<script src="Cart.js"></script>
+<script>
+    $(document).ready(() => {
+        new Cart('.shopping-cart-quick-items', 'cart.json');
+    })
+</script>
 </body>
-
 </html>
