@@ -50,8 +50,25 @@
             </form>
         </div>
         <div class="header-right">
-            <a class="header-cart" href="#"><img src="img/Forma_1.svg" alt="cart"></a> <a class="button-site my-acc"
-                                                                                          href="#">My&nbsp;Account</a>
+            <div class="shopping-cart-icon"><img src="img/Forma_1.svg" alt="cart">
+                <div class="shopping-cart-quick">
+                    <div class="shopping-cart-quick-items">
+
+
+                    </div>
+
+                    <div class="shopping-cart-quick__price">
+                        <div>TOTAL</div>
+                        <div class="cartTotalPrice"></div>
+                    </div>
+
+                    <div class="shopping-cart-button"><a class="white-button shopping-cart-button__white-button"
+                                                         href="checkout.html">CHECKOUT</a></div>
+                    <div class="shopping-cart-button"><a class="white-button shopping-cart-button__white-button"
+                                                         href="shopping-cart.html">GO TO CART</a></div>
+                </div>
+            </div>
+            <a class="button-site my-acc" href="#">My&nbsp;Account</a>
         </div>
     </div>
 </header>
@@ -517,11 +534,13 @@
                 <div class="sh-other-columns">
                     <p class="cart-item-text">$300</p>
                 </div>
-                <div class="sh-other-columns"><a class="cart-item-link" href="#"><i class="fas fa-times-circle"></i></a>
+                <div class="sh-other-columns">
+                    <a class="cart-item-link" href="#"><i class="fas fa-times-circle"></i></a>
                 </div>
             </div>
         </div>
-        <div class="buttonbox"><a class="button-clearCart" href="#">Clear shopping cart</a> <a class="button-cart" href="#">Continue
+        <div class="buttonbox"><a class="button-clearCart" href="#">Clear shopping cart</a> <a class="button-cart"
+                                                                                               href="#">Continue
             Shopping</a></div>
     </div>
 </div>
@@ -639,7 +658,7 @@
 <script src="Feedback.js"></script>
 <script>
     $(document).ready(() => {
-        let cart = new Cart('.shopping-cart-quick-items', 'cart.json','.cartItems');
+        let cart = new Cart('.shopping-cart-quick-items', 'cart.json', '.cartItems');
         $('.button-clearCart').click(() => {
             cart.clearCart()
         })

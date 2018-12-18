@@ -88,29 +88,22 @@ class Cart {
         $textWrapper.append(`<p class="sh-proddet-desc-cs">Size:<span class="sh-proddet-desc-cs-value">xll</span></p>`);
         $itemInfo.append($textWrapper);
         $cartItem.append($itemInfo);
-        let $itemOtherColumns = $('<div/', {
+        $cartItem.append(`<div class="sh-other-columns"><p class="cart-item-text">$${item.price.toFixed(2)}</p></div>`);
+        $cartItem.append(`<div class="sh-other-columns"><input class="sh-input-box" data-id="${item.id_product}" type="number" value="${item.quantity}"></div>`);
+        $cartItem.append(`<div class="sh-other-columns"><p class="cart-item-text">free</p></div>`);
+        let costItems = item.price * item.quantity;
+        $cartItem.append(`<div class="sh-other-columns"><p class="cart-item-text">$${costItems.toFixed(2)}</p></div>`);
+        let $itemOtherColumns = $('<div/>', {
             class: "sh-other-columns"
         });
-        $itemOtherColumns.append(`<p class="cart-item-text">$${item.price.toFixed(2)}</p>`);
-        $cartItem.append($itemOtherColumns);
-        $itemOtherColumns.empty();
-        $itemOtherColumns.append(`<input class="sh-input-box" data-id="${item.id_product}" type="number" value="${item.quantity}"></div>`);
-        $cartItem.append($itemOtherColumns);
-        $itemOtherColumns.empty();
-        $itemOtherColumns.append(`<p class="cart-item-text">free</p>`);
-        $cartItem.append($itemOtherColumns);
-        $itemOtherColumns.empty();
-        let costItems = item.price * item.quantity;
-        $itemOtherColumns.append(`<p class="cart-item-text">$${costItems.toFixed(2)}</p>`);
-        $cartItem.append($itemOtherColumns);
-        $itemOtherColumns.empty();
         let $deleteBtnWrapper = $('<a/>', {
             class: "cart-item-link",
             'data-id': item.id_product,
             href: "#"
         });
         $deleteBtnWrapper.append(`<i class="fas fa-times-circle"></i>`);
-        $cartItem.append($deleteBtnWrapper);
+        $itemOtherColumns.append($deleteBtnWrapper);
+        $cartItem.append($itemOtherColumns);
         $cartWrapper.append($cartItem);
         $deleteBtnWrapper.on('click', (e) => {
             e.preventDefault();
