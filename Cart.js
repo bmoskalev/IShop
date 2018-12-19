@@ -48,8 +48,8 @@ class Cart {
             this.amount += item.price * item.quantity;
         }
         $(".cartTotalPrice").text(`$${this.amount.toFixed(2)}`);
-        $('.grandTotalSum').text(`$${this.amount.toFixed(2)}`);
-        $('.subTotal').text(`SUB TOTAL $${this.amount.toFixed(2)}`);
+        $('.span-st').text(`$${this.amount.toFixed(2)}`);
+        $('.span-gt').text(`$${this.amount.toFixed(2)}`);
 
     }
 
@@ -89,7 +89,7 @@ class Cart {
         $itemInfo.append($textWrapper);
         $cartItem.append($itemInfo);
         $cartItem.append(`<div class="sh-other-columns"><p class="cart-item-text">$${item.price.toFixed(2)}</p></div>`);
-        $cartItem.append(`<div class="sh-other-columns"><input class="sh-input-box" data-id="${item.id_product}" type="number" value="${item.quantity}"></div>`);
+        $cartItem.append(`<div class="sh-other-columns"><input class="sh-input-box" data-id="${item.id_product}" type="number" value="${item.quantity}" min="1"></div>`);
         $cartItem.append(`<div class="sh-other-columns"><p class="cart-item-text">free</p></div>`);
         let costItems = item.price * item.quantity;
         $cartItem.append(`<div class="sh-other-columns"><p class="cart-item-text">$${costItems.toFixed(2)}</p></div>`);
@@ -110,7 +110,7 @@ class Cart {
             this._remove(item.id_product)
         });
         this._renderSum();
-        $(`tr[data-id="${item.id_product}"]`).on('input', '.bigCartQuantity', () => {
+        $(`div[data-id="${item.id_product}"]`).on('input', '.sh-input-box', () => {
             this._setItemQuantity(item.id_product);
             localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
         })
@@ -119,7 +119,7 @@ class Cart {
 
     _setItemQuantity(productId) {
         let find = this.cartItems.find(product => product.id_product === productId);
-        let value = +$(this.containerPageCart).find(`.bigCartQuantity[data-id="${productId}"]`).val();
+        let value = +$(this.containerPageCart).find(`.sh-input-box[data-id="${productId}"]`).val();
         if (value > 0 && Number.isInteger(value)) {
             find.quantity = value;
             this._updateCart(find);
@@ -179,7 +179,7 @@ class Cart {
                 this._updateCart(find);
             } else {
                 $(this.containerIconCart).find(`div[data-id="${productId}"]`).remove();
-                $(this.containerPageCart).find(`tr[data-id="${productId}"]`).remove();
+                $(this.containerPageCart).find(`div[data-id="${productId}"]`).remove();
                 let idx = this.cartItems.indexOf(find);
                 this.cartItems.splice(idx, 1);
                 this._updateCart(find);
@@ -214,9 +214,8 @@ class Cart {
     _updateCart(item) {
         let $container = $(`div[data-id="${item.id_product}"]`);
         $container.find('.shopping-cart-quick-text-price').text(`${item.quantity} x $${item.price.toFixed(2)}`);
-        let $container2 = $(`tr[data-id="${item.id_product}"]`);
-        $container2.find('.bigCartQuantity').val(`${item.quantity}`);
+        $container.find('.sh-input-box').val(`${item.quantity}`);
         let totalPrice = item.quantity * item.price;
-        $container2.find('.itemTotal').text(`$${totalPrice.toFixed(2)}`);
+        $container.find('.itemTotal').text(`$${totalPrice.toFixed(2)}`);
     }
 }

@@ -657,7 +657,7 @@
         let cart = new Cart('.shopping-cart-quick-items', 'cart.json');
         $('.box-products').on('click', '.add', e => {
             e.preventDefault();
-            cart.addElement(e.target)
+            cart.addElement(e.currentTarget)
         });
 
     });
